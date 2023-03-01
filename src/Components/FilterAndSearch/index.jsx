@@ -35,17 +35,20 @@ export default function FilterAndSearch({data, setFilteredData}){
         setFilteredData(data.filter((element)=> element.areSeatsAvailable));
         setFilterType("seatsavailable");
     }
+    function handleSearch(event){
+        setFilteredData(data.filter(element => element.name.includes(event.target.value)));
+    }
 
     return (
         <div className="filterAndSearch">
             <div className="searchHeader">
                 <img className="filterIcon" src={filterIcon} alt="filter icon"/>
                 <div>
-                    <input className="textBox" type="text" /> 
+                    <input className="textBox" type="text" onChange={handleSearch} /> 
                     <img className="searchIcon" src={searchIcon} alt="search icon" />
                 </div>
             </div>
-            <input type="checkbox" id="all" value="all" checked={checkAll} onClick={handlleAllClick} onChange={handlleAllClick}/>
+            <input type="checkbox" id="all" value="all" checked={checkAll} onChange={handlleAllClick}/>
             <label for="all">All</label>
             <input type="checkbox" id="bookmarked" value="bookmarked" checked={checkBookmarked} onChange={handleBookmarkedClick}/>
             <label for="bookmarked">BOOKMARKED</label>
