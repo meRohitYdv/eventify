@@ -36,7 +36,7 @@ export default function FilterAndSearch({data, setFilteredData}){
         setFilterType("seatsavailable");
     }
     function handleSearch(event){
-        setFilteredData(data.filter(element => element.name.includes(event.target.value)));
+        setFilteredData(data.filter(element => element.name.toLowerCase().includes(event.target.value.toLowerCase())));
     }
 
     return (
