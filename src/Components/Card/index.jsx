@@ -8,7 +8,7 @@ import { UPDATE_EVENT_BY_ID } from "../../constants/apiEndPoints";
 import makeRequest from "../../utils/makeRequest";
 import crossIcon from "../../assets/icons/cross.png";
 
-export default function Card({data}){
+export default function Card({data, navigate}){
     let {areSeatsAvailable, datetime, description, id, imgUrl, isBookmarked, isRegistered, name, timezone, venue } = data;
     const [_isBookmarked, set_isBookmarked] = React.useState(isBookmarked);
 
@@ -25,7 +25,7 @@ export default function Card({data}){
     }
 
     return (
-        <div className="card">
+        <div className="card" >
             <img className="cardImage" src={imgUrl} alt="event image"/>
             <hr />
             <p className="name">{name.toUpperCase()}</p>
