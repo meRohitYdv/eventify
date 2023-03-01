@@ -1,0 +1,20 @@
+.filterAndSearch{
+    width: 600px;
+    flex:none;
+}
+.filterIcon{
+    height:30px;
+    width: 30px;
+}
+.searchIcon{
+    height: 30px;
+    width:30px;
+    position: relative;
+    top: 7px;
+}
+.searchHeader{
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
