@@ -28,9 +28,11 @@ export default function FilterAndSearch({data, setFilteredData}){
         setFilterType("registered");
     }
     function handleBookmarkedClick(){
+        setFilteredData(data.filter((element)=> element.isBookmarked));
         setFilterType("bookmarked");
     }
     function handleSeatsAvailClick(){
+        setFilteredData(data.filter((element)=> element.areSeatsAvailable));
         setFilterType("seatsavailable");
     }
 
